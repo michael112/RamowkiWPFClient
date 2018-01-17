@@ -1,0 +1,29 @@
+﻿<Window x:Class="WPFSample.Controllers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFSample"
+        mc:Ignorable="d"
+        Title="" Height="350" Width="600">
+    <Grid>
+        <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="*" /></Grid.RowDefinitions>
+        <Grid.ColumnDefinitions><ColumnDefinition /></Grid.ColumnDefinitions>
+        <Menu IsMainMenu="True" Grid.Row="0" Grid.Column="0">
+            <MenuItem Header="_Audycje">
+                <MenuItem Header="_Lista audycji" Click="ShowProgrammeList" />
+                <MenuItem Header="_Dodaj audycję..." Click="AddNewProgrammeDialog" />
+            </MenuItem>
+            <MenuItem Header="_Ramówka">
+                <MenuItem Header="_Lista pozycji w ramówce">
+                    <MenuItem Header="Według dnia tygodnia..." Click="ShowScheduledProgrammeListByWeekDay" />
+                    <MenuItem Header="Według daty..." Click="ShowScheduledProgrammeListByDate" />
+                </MenuItem>
+                <MenuItem Header="_Dodaj pozycję do ramówki..." Click="AddNewScheduledProgrammeDialog" />
+            </MenuItem>
+            <MenuItem Header="_Wyczyść dane" Click="ClearContent" />
+            <MenuItem Header="_Zakończ" Click="Exit" />
+        </Menu>
+        <StackPanel Name="ContentContainer" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="1" Grid.Column="0" />
+    </Grid>
+</Window>

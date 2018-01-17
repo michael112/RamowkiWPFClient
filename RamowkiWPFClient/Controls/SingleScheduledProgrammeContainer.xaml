@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="WPFSample.Controls.SingleScheduledProgrammeContainer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d">
+    <Grid Name="MainContainer">
+        <Grid.RowDefinitions><RowDefinition /></Grid.RowDefinitions>
+        <Grid.ColumnDefinitions ><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+
+        <Label Name="TitleLbl" Margin="0 5 5 5" Grid.Row="0" Grid.Column="0">
+            <Label.Content><TextBlock><TextBlock.Text>
+                <MultiBinding StringFormat=" {0:D2}:{1:D2} {2}">
+                    <Binding Path="BeginTime.Hours" />
+                    <Binding Path="BeginTime.Minutes" />
+                    <Binding Path="Programme.Title" />
+                </MultiBinding>
+            </TextBlock.Text></TextBlock></Label.Content>
+        </Label>
+        <Button Click="ShowOrHideDescription" Content="Rozwiń..." Name="ShowOrHideDescBtn" Margin="5" Grid.Row="0" Grid.Column="1" />
+        <Button Click="EditBtnClick" Content="Edytuj" DataContext="{Binding Id}" Margin="5" Grid.Row="0" Grid.Column="2" />
+        <Button Click="RemoveBtnClick" Content="Usuń" DataContext="{Binding Id}" Margin="5 5 0 5" Grid.Row="0" Grid.Column="3" />
+    </Grid>
+</UserControl>

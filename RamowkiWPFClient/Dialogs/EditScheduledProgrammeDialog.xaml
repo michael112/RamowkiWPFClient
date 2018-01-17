@@ -1,0 +1,31 @@
+﻿<Window x:Class="WPFSample.Controllers.EditScheduledProgrammeDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Edytuj pozycję ramówkową..."
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize">
+    <Grid Margin="5">
+        <Grid.RowDefinitions><RowDefinition /><RowDefinition /><RowDefinition /><RowDefinition /></Grid.RowDefinitions>
+        <Grid.ColumnDefinitions><ColumnDefinition /></Grid.ColumnDefinitions>
+
+        <Label Content="Tryb edycji:" Grid.Row="0" Grid.Column="0" />
+        <Grid Name="EditModeContainer" Margin="5" Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions><RowDefinition /></Grid.RowDefinitions>
+            <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition /></Grid.ColumnDefinitions>
+
+            <RadioButton Name="Rb1" Content="Przypisanie innej audycji" GroupName="EditMode" Checked="EditModeChanged" Grid.Row="0" Grid.Column="0" />
+            <RadioButton Name="Rb2" Content="Zmiana dnia lub godziny emisji" GroupName="EditMode" Checked="EditModeChanged" Grid.Row="0" Grid.Column="1" />
+        </Grid>
+        <Grid Name="ContentContainer" HorizontalAlignment="Center" Margin="5" Grid.Row="2" Grid.Column="0" />
+        <Grid Name="SaveCancelContainer" Margin="5" Grid.Row="3" Grid.Column="0">
+            <Grid.RowDefinitions><RowDefinition /></Grid.RowDefinitions>
+            <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition /></Grid.ColumnDefinitions>
+
+            <Button Name="SaveButton" Content="Zapisz" Click="SaveBtnClick" Grid.Row="0" Grid.Column="0" />
+            <Button Name="CancelButton" Content="Anuluj" Click="CancelBtnClick" Grid.Row="0" Grid.Column="1" />
+        </Grid>
+    </Grid>
+</Window>

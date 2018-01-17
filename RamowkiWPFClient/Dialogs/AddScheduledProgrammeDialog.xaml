@@ -1,0 +1,40 @@
+﻿<Window x:Class="WPFSample.Controllers.AddScheduledProgrammeDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:e="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Dodaj pozycję do ramówki..."
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize">
+
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions><RowDefinition /><RowDefinition /><RowDefinition /><RowDefinition /><RowDefinition /><RowDefinition /></Grid.RowDefinitions>
+        <Grid.ColumnDefinitions><ColumnDefinition /></Grid.ColumnDefinitions>
+
+        <Grid Margin="0 0 0 5" Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions><RowDefinition /></Grid.RowDefinitions>
+            <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition /></Grid.ColumnDefinitions>
+
+            <RadioButton GroupName="DayType" Name="WeekDayRB" Content="Dzień tygodnia" Checked="DayTypeChanged" Grid.Row="0" Grid.Column="0" />
+            <RadioButton GroupName="DayType" Name="DateDayRB" Content="Konkretna data" Checked="DayTypeChanged" Grid.Row="0" Grid.Column="1" />
+        </Grid>
+
+        <StackPanel Name="DayContainer" Grid.Row="1" Grid.Column="0" />
+        <e:TimePicker Name="TimeContainer" Grid.Row="2" Grid.Column="0" />
+        <CheckBox Name="CreateNewProgrammeContainer" Content="Czy założyć audycję?" IsChecked="False" Checked="CreateProgrammeChanged" Unchecked="CreateProgrammeChanged" Grid.Row="3" Grid.Column="0" />
+        <StackPanel Name="NewProgrammeContainer" Grid.Row="4" Grid.Column="0" />
+
+        <Grid Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="0">
+            <Grid.RowDefinitions><RowDefinition /></Grid.RowDefinitions>
+            <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+
+            <Button Content="Zapisz" Click="SaveButtonClick" Grid.Row="0" Grid.Column="0" Margin="0 0 5 0" />
+            <Button Content="Anuluj" Click="CancelButtonClick" Grid.Row="0" Grid.Column="1" Margin="5 0 0 0" />
+        </Grid>
+
+    </Grid>
+
+</Window>
